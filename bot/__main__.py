@@ -226,14 +226,14 @@ def stats(update, context):
 def start(update, context):
     buttons = ButtonMaker()
     if EMOJI_THEME is True:
-        buttons.buildbutton(f"😎 {START_BTN1_NAME}", f"{START_BTN1_URL}")
-        buttons.buildbutton(f"🔥 {START_BTN2_NAME}", f"{START_BTN2_URL}")
+        buttons.buildbutton(f"Leech/Mirror Group 🖤", f"https://t.me/ashish_leech_group")
+        buttons.buildbutton(f"Owner ❤", f"https://t.me/ashishsharmalegend")
     else:
-        buttons.buildbutton(f"{START_BTN1_NAME}", f"{START_BTN1_URL}")
-        buttons.buildbutton(f"{START_BTN2_NAME}", f"{START_BTN2_URL}")
+        buttons.buildbutton(f"Leech/Mirror Group 🖤", f"https://t.me/ashish_leech_group")
+        buttons.buildbutton(f"Owner ❤", f"https://t.me/ashishsharmalegend")
     reply_markup = buttons.build_menu(2)
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
-        start_string = f'''This bot can mirror all your links to Google Drive!
+        start_string = f'''Hi, I am ready for you my love ❤🖤
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
         if PICS:
@@ -241,7 +241,7 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
         else:
             sendMarkup(start_string, context.bot, update.message, reply_markup)
     else:
-        text = f"Not Authorized user, deploy your own mirror bot"
+        text = f"Sorry, You cannot use me here! join my public group for below @Ashish_Leech_Group ❤"
         if PICS:
             sendPhoto(text, context.bot, update.message, random.choice(PICS), reply_markup)
         else:
