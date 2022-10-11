@@ -279,8 +279,8 @@ def restart(update, context):
         for po in proclist:
             app.process_formation()[po.type].scale(0)
     else:
-        LOGGER.info("Normally Restarting.")
-        restart_message = sendMessage("Normally Restarting.", context.bot, update.message)
+        LOGGER.info("Gonna Miss you Soo Much...❤🖤")
+        restart_message = sendMessage("Gonna Miss you Soo Much...❤🖤", context.bot, update.message)
         if Interval:
             Interval[0].cancel()
             Interval.clear()
@@ -297,7 +297,7 @@ def restart(update, context):
 def ping(update, context):
     if EMOJI_THEME is True:
         start_time = int(round(time() * 1000))
-        reply = sendMessage("Starting_Ping ⛔", context.bot, update.message)
+        reply = sendMessage("accha ji ping dekhoge 🥰", context.bot, update.message)
         end_time = int(round(time() * 1000))
         editMessage(f'{end_time - start_time} ms 🔥', reply)
     else:
@@ -311,7 +311,7 @@ def log(update, context):
 
 
 help_string = '''
-<b><a href='https://github.com/codewithweeb/mirror-with-weeb'>WeebZone</a></b> - The Ultimate Telegram MIrror-Leech Bot to Upload Your File & Link in Google Drive & Telegram
+<b><a href=''>Ashish Sharma</a></b>
 Choose a help category:
 '''
 
