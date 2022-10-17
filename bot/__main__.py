@@ -226,14 +226,14 @@ def stats(update, context):
 def start(update, context):
     buttons = ButtonMaker()
     if EMOJI_THEME is True:
-        buttons.buildbutton(f"😎 {START_BTN1_NAME}", f"{START_BTN1_URL}")
-        buttons.buildbutton(f"🔥 {START_BTN2_NAME}", f"{START_BTN2_URL}")
+        buttons.buildbutton(f"Leech/Mirror Group 🖤", f"https://t.me/ashish_leech_group")
+        buttons.buildbutton(f"Owner ❤", f"https://t.me/ashishsharmalegend")
     else:
-        buttons.buildbutton(f"{START_BTN1_NAME}", f"{START_BTN1_URL}")
-        buttons.buildbutton(f"{START_BTN2_NAME}", f"{START_BTN2_URL}")
+        buttons.buildbutton(f"Leech/Mirror Group 🖤", f"https://t.me/ashish_leech_group")
+        buttons.buildbutton(f"Owner ❤", f"https://t.me/ashishsharmalegend")
     reply_markup = buttons.build_menu(2)
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
-        start_string = f'''This bot can mirror all your links to Google Drive!
+        start_string = f'''Hi, I am ready for you my love ❤🖤
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
         if PICS:
@@ -241,7 +241,7 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
         else:
             sendMarkup(start_string, context.bot, update.message, reply_markup)
     else:
-        text = f"Not Authorized user, deploy your own mirror bot"
+        text = f"Sorry, You cannot use me here! join my public group for below @Ashish_Leech_Group ❤"
         if PICS:
             sendPhoto(text, context.bot, update.message, random.choice(PICS), reply_markup)
         else:
@@ -279,8 +279,8 @@ def restart(update, context):
         for po in proclist:
             app.process_formation()[po.type].scale(0)
     else:
-        LOGGER.info("Normally Restarting.")
-        restart_message = sendMessage("Normally Restarting.", context.bot, update.message)
+        LOGGER.info("Gonna Miss you Soo Much...❤🖤")
+        restart_message = sendMessage("Gonna Miss you Soo Much...❤🖤", context.bot, update.message)
         if Interval:
             Interval[0].cancel()
             Interval.clear()
@@ -297,7 +297,7 @@ def restart(update, context):
 def ping(update, context):
     if EMOJI_THEME is True:
         start_time = int(round(time() * 1000))
-        reply = sendMessage("Starting_Ping ⛔", context.bot, update.message)
+        reply = sendMessage("accha ji ping dekhoge 🥰", context.bot, update.message)
         end_time = int(round(time() * 1000))
         editMessage(f'{end_time - start_time} ms 🔥', reply)
     else:
@@ -311,7 +311,7 @@ def log(update, context):
 
 
 help_string = '''
-<b><a href='https://github.com/codewithweeb/mirror-with-weeb'>WeebZone</a></b> - The Ultimate Telegram MIrror-Leech Bot to Upload Your File & Link in Google Drive & Telegram
+<b><a href=''>Ashish Sharma</a></b>
 Choose a help category:
 '''
 
@@ -548,15 +548,9 @@ def main():
                 if ospath.isfile(".restartmsg"):
                     with open(".restartmsg") as f:
                         chat_id, msg_id = map(int, f)
-                    msg = f"😎Restarted successfully❗\n"
-                    msg += f"📅DATE: {date}\n"
-                    msg += f"⌚TIME: {time}\n"
-                    msg += f"🌐TIMEZONE: {TIMEZONE}\n"
+                    msg = f"My love, Missed You..❤🖤"
                 else:
-                    msg = f"😎Bot Restarted!\n"
-                    msg += f"📅DATE: {date}\n"
-                    msg += f"⌚TIME: {time}\n"
-                    msg += f"🌐TIMEZONE: {TIMEZONE}"
+                    msg = f"I'm back my love, Missed You..❤🖤"
 
                 for tag, links in data.items():
                      msg += f"\n{tag}: "
@@ -584,11 +578,11 @@ def main():
     if ospath.isfile(".restartmsg"):
         with open(".restartmsg") as f:
             chat_id, msg_id = map(int, f)
-        msg = f"😎Restarted successfully❗\n📅DATE: {date}\n⌚TIME: {time}\n🌐TIMEZONE: {TIMEZONE}\n"
+        msg = f"My love, Missed You..❤🖤"
         bot.edit_message_text(msg, chat_id, msg_id)
         osremove(".restartmsg")
     elif not notifier_dict and AUTHORIZED_CHATS:
-        text = f"😎Bot Restarted❗ \n📅DATE: {date} \n⌚TIME: {time} \n🌐TIMEZONE: {TIMEZONE}"
+        text = f"I'm back my love, Missed You..❤🖤"
         for id_ in AUTHORIZED_CHATS:
             try:
                 bot.sendMessage(chat_id=id_, text=text, parse_mode=ParseMode.HTML)
@@ -613,7 +607,7 @@ def main():
     dispatcher.add_handler(stats_handler)
     dispatcher.add_handler(log_handler)
     updater.start_polling(drop_pending_updates=IGNORE_PENDING_REQUESTS)
-    LOGGER.info("💥𝐁𝐨𝐭 𝐒𝐭𝐚𝐫𝐭𝐞𝐝❗")
+    LOGGER.info("I'm back my love, Missed You..❤🖤")
     signal(SIGINT, exit_clean_up)
 
 app.start()
